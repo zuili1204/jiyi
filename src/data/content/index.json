@@ -1,0 +1,14 @@
+{
+  "version": 11,
+  "kinds": [
+    "lots",
+    "iching",
+    "qimen",
+    "ziwei",
+    "bazi",
+    "tutorial"
+  ],
+  "items": 1150,
+  "bytes": 853995,
+  "rulesVersion": 3
+}

@@ -1,0 +1,36 @@
+name: CI
+
+# Y1-16：发布仓库不提供 DOCS/（对拍数据与内容母版仅在本地），
+# 因此 CI 只跑 G3 类型 / G2 测试（golden 依赖用例会自动跳过）与构建冒烟。
+# 任一失败即红，不允许合并。
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 准备 Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: G3 · 类型门禁（vue-tsc 0 错误）
+        run: npm run typecheck
+
+      - name: G2 · 测试门禁（全绿）
+        run: npm test
+
+      - name: 产物构建冒烟
+        run: npm run build

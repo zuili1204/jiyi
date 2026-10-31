@@ -1,0 +1,96 @@
+/* 视觉 token：墨底朱砂 + 青铜描边（易学 / 国学调性）
+   纪律：颜色只在此处定义，组件一律引用变量，不写死色值。 */
+
+:root {
+  /* 让原生控件（date/time 输入、select、滚动条）跟随暗色主题渲染 */
+  color-scheme: dark;
+
+  /* 底色：墨黑，微冷 */
+  --bg: #0b0a11;
+  --bg-2: #12101a;
+  --panel: #17151f;
+  --panel-2: #1f1c29;
+  --line: rgba(192, 72, 60, 0.22);
+  --line-soft: rgba(236, 232, 241, 0.1);
+
+  /* 朱砂（主色：行动 / 选中 / 强调） */
+  --cinnabar: #c0483c;
+  --cinnabar-bright: #e2766a;
+  --cinnabar-dim: rgba(192, 72, 60, 0.5);
+
+  /* 青铜（辅色：描边 / 徽记 / 次级强调） */
+  --bronze: #a8894f;
+  --bronze-bright: #d8bd85;
+  --bronze-dim: rgba(168, 137, 79, 0.42);
+
+  /* 文字 */
+  --text: #ece8f1;
+  --text-2: #9a93a6;
+  /* text-3 用于次级说明文字：原 #6b6577 对面板的对比度只有 3.7:1，
+     未达 WCAG AA（正文 4.5:1），已提亮至 ~5:1。改动须同步跑 tests/a11y-contrast.spec.ts */
+  --text-3: #8a8397;
+
+  /* 语义色 */
+  --ok: #6f9c76;
+  --warn: #c9a227;
+  --danger: #c0483c;
+
+  /* 尺寸 */
+  /* 桌面兜底的窄列宽度：#app 与所有固定吸附元素（底栏等）必须共用同一个值，
+     否则宽屏下固定栏会被拉伸到整窗，与内容列错位（见 tests/layout.spec.ts） */
+  --app-max: 420px;
+  --radius: 14px;
+  --radius-s: 8px;
+  --radius-pill: 999px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* 动效：时长四档 + 缓动三系
+     fast=反馈 / base=常规 / slow=仪式链 / ritual=每屏最多一次的隆重时刻 */
+  --dur-fast: 180ms;
+  --dur-base: 300ms;
+  --dur-slow: 520ms;
+  --dur-ritual: 900ms;
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* 五行配色：只用于干支大字号字符与细描边（大字号按 3:1 把关，非正文色），
+     正文文字仍走 --text / --text-2 / --text-3 */
+  --wx-wood: #5f9e6a;
+  --wx-fire: #c0483c;
+  --wx-earth: #b08b4f;
+  --wx-metal: #c9c4d4;
+  --wx-water: #5b8fc0;
+
+  /* 字体：标题衬线（宋/明体），正文无衬线 */
+  --font-serif: 'Noto Serif SC', 'Songti SC', 'STSong', 'SimSun', serif;
+  --font-sans: 'Noto Sans SC', system-ui, -apple-system, 'PingFang SC', 'HarmonyOS Sans SC', 'MiSans',
+    'Microsoft YaHei', sans-serif;
+}
+
+/* 浅色主题：由 App.vue 写 body[data-theme] */
+body[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f4f2f6;
+  --bg-2: #eceaf1;
+  --panel: #ffffff;
+  --panel-2: #f7f5fa;
+  --line: rgba(192, 72, 60, 0.28);
+  --line-soft: rgba(28, 26, 33, 0.1);
+  --cinnabar: #a63a2f;
+  --cinnabar-bright: #c0483c;
+  --cinnabar-dim: rgba(166, 58, 47, 0.35);
+  --bronze: #8a6d3b;
+  --bronze-bright: #a8894f;
+  --bronze-dim: rgba(138, 109, 59, 0.32);
+  --text: #1c1a21;
+  --text-2: #5f5a6b;
+  --text-3: #6f6a7d; /* 同深色侧：满足 4.5:1 */
+
+  /* 五行配色（浅底上加深，保证大字号字符可辨） */
+  --wx-wood: #3f7a4a;
+  --wx-fire: #a63a2f;
+  --wx-earth: #8a6d3b;
+  --wx-metal: #6f6a7d;
+  --wx-water: #35617f;
+}

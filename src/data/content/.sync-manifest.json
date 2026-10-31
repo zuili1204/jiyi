@@ -1,0 +1,15 @@
+[
+  "bazi/duanYu.json",
+  "iching/hexagrams.json",
+  "iching/lines.json",
+  "iching/templates.json",
+  "lots/guandi.json",
+  "lots/guanyin.json",
+  "lots/lvzu.json",
+  "qimen/dingJu.json",
+  "qimen/templates.json",
+  "tutorial/tutorial.json",
+  "ziwei/palaceStars.json",
+  ".sync-manifest.json",
+  "index.json"
+]

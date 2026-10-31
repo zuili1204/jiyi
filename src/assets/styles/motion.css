@@ -1,0 +1,73 @@
+/* 动效基建：只走 transform / opacity；reduced-motion 由 base.css 全局降级为直切
+   工具类用 --d 控制入场延迟，可做级联 */
+
+.route-enter-active,
+.route-leave-active {
+  transition:
+    opacity var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+.route-enter-from {
+  opacity: 0;
+  transform: translateY(0.04rem);
+}
+.route-leave-to {
+  opacity: 0;
+  transform: translateY(-0.02rem);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(0.05rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.86);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatBob {
+  from {
+    transform: translateY(-0.012rem);
+  }
+  to {
+    transform: translateY(0.012rem);
+  }
+}
+
+/* 工具类 */
+.a-fade-up {
+  animation: fadeUp 0.42s var(--ease-out) both;
+  animation-delay: var(--d, 0s);
+}
+.a-pop {
+  animation: popIn var(--dur-slow) var(--ease-spring) both;
+  animation-delay: var(--d, 0s);
+}
+.a-float {
+  animation: floatBob 3.2s ease-in-out infinite alternate;
+}
+
+/* 按压反馈 */
+button {
+  transition: transform var(--dur-fast) ease;
+}
+button:active {
+  transform: scale(0.96);
+}

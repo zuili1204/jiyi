@@ -1,0 +1,32 @@
+MIT License
+
+Copyright (c) 2026 JiYi Authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------
+Scope note (中文说明，不属于 MIT 许可文本的一部分 / not part of the MIT text):
+
+本许可只覆盖**源代码**。内容母版（签谱、卦爻辞、断语等）各自带有 `source` / `license`
+字段，本项目**不对其做再许可**；使用时请遵循母版内标注的出处与许可。
+第三方依赖（见 package.json，如 lunar-typescript）沿用各自的上游许可。
+The MIT licence above covers the source code only. Content master files
+(lots, hexagram and line texts, readings) carry their own `source` / `license`
+fields and are not relicensed here. Third-party dependencies (see package.json,
+e.g. lunar-typescript) remain under their upstream licences.

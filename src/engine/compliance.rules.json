@@ -1,0 +1,81 @@
+{
+  "version": 3,
+  "families": {
+    "absolute": {
+      "level": "block",
+      "words": ["必定", "一定会", "必然发生", "注定", "百分百", "逃不掉", "铁定", "毫无疑问会"]
+    },
+    "medical": {
+      "level": "block",
+      "words": ["确诊", "癌症", "绝症", "手术", "痊愈", "抑郁", "诊断", "治疗", "带病"]
+    },
+    "invest": {
+      "level": "block",
+      "words": ["买入", "卖出", "涨停", "抄底", "稳赚", "收益", "止损", "加仓"]
+    },
+    "legal": {
+      "level": "block",
+      "words": ["必定胜诉", "会判", "刑期", "坐牢", "判决结果"]
+    },
+    "gender": {
+      "level": "block",
+      "words": ["生男", "生女", "一定是儿子", "女孩命", "男孩命"]
+    },
+    "doom": {
+      "level": "block",
+      "words": ["血光", "横死", "夭折", "绝后", "家破人亡", "大祸临头", "凶灾"]
+    },
+    "religion": {
+      "level": "block",
+      "words": ["皈依", "供奉", "因果报应", "神罚", "不敬则"]
+    },
+    "authority": {
+      "level": "block",
+      "words": ["大师亲授", "官方认证", "最准", "第一准"]
+    },
+    "fate": {
+      "level": "warn",
+      "words": ["命该如此", "天注定", "无法改变"]
+    },
+    "yingqi": {
+      "level": "warn",
+      "words": ["三个月内必", "某年必", "定在某月"]
+    }
+  },
+  "familiesByKind": {
+    "lots": ["absolute", "medical", "invest", "legal", "gender", "doom", "fate", "religion", "authority"],
+    "iching": ["absolute", "medical", "invest", "legal", "gender", "doom", "fate", "religion", "authority", "yingqi"],
+    "bazi": ["absolute", "medical", "invest", "legal", "gender", "doom", "fate", "religion", "authority", "yingqi"],
+    "ziwei": ["absolute", "medical", "invest", "legal", "gender", "doom", "fate", "religion", "authority", "yingqi"],
+    "qimen": ["absolute", "medical", "invest", "legal", "gender", "doom", "fate", "religion", "authority", "yingqi"],
+    "tutorial": ["absolute", "medical", "invest", "legal", "gender", "doom", "fate", "religion", "authority", "yingqi"]
+  },
+  "placeholders": ["TODO", "XXX", "待补", "待填", "{占位}"],
+  "reduplicationPattern": "个月个月|年年年年|日日日日",
+  "maxTextLength": 300,
+  "maxTextLengthOverrides": [
+    {
+      "paths": ["items[*].interpretation"],
+      "max": 2000,
+      "reason": "解曰为长篇传统散文（实测最长约 1600 字），300 字阈值不适用"
+    }
+  ],
+  "exemptions": [
+    {
+      "id": "lots.classicalOriginal",
+      "kind": "lots",
+      "paths": ["items[*].poem[*]", "items[*].interpretation", "items[*].story"],
+      "reason": "签诗 / 解曰 / 典故为传统签谱原文（公有领域），「病」「孕」「生男」等系原文固有表述，并非本产品作出的断语。按 JY-04 §3.4 自指豁免纪律：豁免不等于关闸，改以等价强度检查替代（见 alternativeChecks）。",
+      "requires": ["source", "license", "school"],
+      "alternativeChecks": ["provenance", "placeholder", "reduplication", "length", "exemptCountAudit"]
+    },
+    {
+      "id": "iching.classicalOriginal",
+      "kind": "iching",
+      "paths": ["items[*].ci", "items[*].daXiang", "items[*].xiaoXiang", "items[*].yaoCi[*]"],
+      "reason": "卦辞与《象传》为古籍原文（公有领域），「利用狱」「折狱致刑」「致命遂志」等是原文固有表述，并非本产品作出的断语。白话（baiHua）为本产品自撰，属现代译注，**不在豁免范围**，仍走全词族严检（JY-01 §7 纪律 2）。",
+      "requires": ["source", "license", "school"],
+      "alternativeChecks": ["provenance", "placeholder", "reduplication", "length", "exemptCountAudit"]
+    }
+  ]
+}

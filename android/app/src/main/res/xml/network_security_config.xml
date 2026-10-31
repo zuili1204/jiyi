@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- 默认禁用明文流量。本应用为纯离线：签占与卜筮全部本地计算，不依赖网络。
+         只有两处需要联网，且都是 HTTPS：
+         1. AI 深度解读（BYOK：密钥由用户自填，请求直连用户所选服务商，不经我方服务器）
+         2. 设置里由用户显式开启的联网字体 -->
+    <base-config cleartextTrafficPermitted="false" />
+
+    <!-- Capacitor 的 WebView 以 http://localhost 为源加载本地资产，
+         必须单独放行，否则全局禁用明文后界面会白屏。 -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">localhost</domain>
+        <domain includeSubdomains="false">127.0.0.1</domain>
+    </domain-config>
+</network-security-config>

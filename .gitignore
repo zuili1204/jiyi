@@ -1,0 +1,69 @@
+node_modules
+dist
+dist-ssr
+coverage
+
+# 本地 npm 缓存（体积大且非源码，勿入库）
+npm-cache/
+
+# 编辑器 / IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# 临时产物：从产生那一刻起就进 .gitignore（README §5 纪律 7）
+*.local
+*.log
+*.out
+*.tmp
+*.bak
+
+# 本地测试 / 校验的临时输出
+dev.log
+dev.err
+*-out.txt
+out?.txt
+
+# 浏览器走查（playwright-cli）产生的快照 / 截图缓存
+.playwright-cli/
+v[0-9]*.txt
+x[0-9]*.txt
+w[0-9]*.txt
+
+# 采集脚本的远端缓存（不是母版，不入库）
+scripts/.cache/
+
+# ================= 发布策略 =================
+# DOCS 是本地工程文档（JY 规格 / 台账 / 内容母版 / 引擎对拍数据 / 第三方资料副本），
+# 整个目录不提交、不推送；发布仓库不提供 golden 对拍数据与内容母版。
+DOCS/
+
+# 会话过程中的临时输出（诊断 / 构建 / gradle 日志，勿入库）
+.a-*.txt
+audit.json
+build.txt
+cap*.txt
+gradle*.txt
+probe.txt
+sync.txt
+t.txt
+t4.txt
+tail.txt
+npm-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
+
+# 发布产物
+*.apk
+*.aab
+*.keystore
+*.jks
+android/keystore.properties
+android/.gradle
+android/app/build
+android/build
+android/local.properties
+
+# 例外：release/ 下的 APK 是给用户直接下载的安装包，必须入库
+!release/*.apk
