@@ -53,6 +53,12 @@ export const AI_PROVIDERS: AiProviderPreset[] = [
     note: '在 openrouter.ai 申请 API Key，可聚合多家模型'
   },
   {
+    id: 'demonroute',
+    label: 'Demon Route',
+    baseUrl: 'https://api.demonroute.com/v1',
+    note: '在 demonroute.com 申请 API Key，可用开源权重与去审查（abliterated）模型'
+  },
+  {
     id: 'custom',
     label: '自定义（OpenAI 兼容）',
     baseUrl: '',
